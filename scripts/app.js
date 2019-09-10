@@ -15,7 +15,7 @@ const updateUI = (data) => {
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
         <span>${weather.Temperature.Imperial.Value}</span>
-        <span>&deg;C</span>
+        <span>&deg;F</span>
     </div>
     `;
 
@@ -39,6 +39,7 @@ const updateCity = async (city) => {
     const cityDetails = await getCity(city);
     const weather = await getWeather(cityDetails.Key);
 
+    // console.log(weather);
     return { cityDetails, weather };
 };
 
